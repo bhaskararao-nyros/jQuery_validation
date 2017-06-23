@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="jQuery Validation">
+    <meta name="author" content="Bhaskararao Gummidi">
+	<title>jQuery Validation</title>
+	<link rel="stylesheet" type="text/css" href="./assets/css/style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="./assets/js/script.js"></script>
+</head>
+<body style="background:url('./assets/images/background.png');">   <!-- body background image --> 
+<form name="myform" class="text-center" method="post" id="myform">	<!-- form starting -->
+	<div class="well">												<!-- well starting -->
+	<i class="glyphicon glyphicon-remove-circle" id="closeicon"></i>
+		<div>
+			<img src="./assets/images/foursquare.png" alt="image" title="foursquare icon">
+		</div>
+		<h3>Foursquare learns what you like and leads you to places you'll love.</h3>
+		<div class="alert alert-danger">Looks like something went wrong. Please try submitting again.
+		</div>
+	<div class="row">	<!-- first row starting -->
+		<div class="col-lg-6">
+			Email*<br>
+			<div class="input-group okay">
+			<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i>
+			<input type="text" name="email" id="inputboxdesign" class="email">
+			<i class="glyphicon glyphicon-ok form-control-feedback hide emailok"></i>
+			<i class="glyphicon glyphicon-remove form-control-feedback hide emailremove"></i>
+			</span></div>
+			<div id="emailerror" class="hide">
+			<div class="size">Hm, that address is invalid. Check for typos?</div>
+			</div>
+		</div>
+		<div class="col-lg-6">
+			Password*<br>
+			<div class="input-group">
+			<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i>
+			<input type="password" name="Password" id="inputboxdesign" class="password">
+			<i class="glyphicon glyphicon-ok form-control-feedback hide pwdok"></i>
+			<i class="glyphicon glyphicon-remove form-control-feedback hide pwdremove"></i>
+			</span></div>
+			<div id="pwderror" class="hide">
+			<div class="size">Your password must be at least 6 characters.</div>
+			</div>
+		</div>
+	</div>
+	<p></p>
+	<div class="row">	<!-- second row starting -->
+		<div class="col-lg-3">
+			First Name*<br>
+			<div class="input-group">
+			<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i>
+			<input type="text" name="firstname" id="inputboxdesign" class="fname">
+			<i class="glyphicon glyphicon-ok form-control-feedback hide fnameok"></i>
+			<i class="glyphicon glyphicon-remove form-control-feedback hide fnameremove"></i>
+			</span></div>
+			<div id="fnameerror" class="hide">
+			<div class="size">Please enter your first name.</div>
+			</div>
+		</div>
+		<div class="col-lg-3">
+			Last Name<br>
+			<div class="input-group">
+			<span class="input-group-addon">
+			<i class="glyphicon"></i>
+			<input type="text" name="lastname" id="inputboxdesign" pattern="[A-Za-z]{2,}">
+			</span></div>
+		</div>
+		<div class="col-lg-6">
+			Birthday*<span class="badge">?</span><br>
+			<div class="input-group">
+			<span class="input-group-addon">
+			<i class="glyphicon glyphicon-gift"></i>
+			<input type="text" name="birthday" id="inputboxdesign" class="bday" placeholder="DD / MM / YYYY">
+			<i class="glyphicon glyphicon-ok form-control-feedback hide bdayok"></i>
+			<i class="glyphicon glyphicon-remove form-control-feedback hide bdayremove"></i>
+			</span></div>
+			<div id="bdayerror" class="hide">
+			<div class="size">Please use this format: DD/MM/YYYY</div>
+			</div>
+		</div>
+	</div>
+	<p></p>
+	<div class="row">	<!-- third row starting here -->
+		<div class="col-lg-6">
+			Gender*<br>
+			<input type="radio" name="gender" value="male">Male
+			<input type="radio" name="gender" value="female">Female
+			<input type="radio" name="gender" value="others" checked="checked">Rather not say
+		</div>
+		<div class="col-lg-6">
+			Profile Photo<br>
+			<input type="file" name="photo">
+		</div>
+	</div>
+	<button class="btn btn-lg btn-primary">Sign up</button>
+</div>
+</form>
+</body>
+<script type="text/javascript">
+								// date field function
+	$(".bday").keyup(function()
+      {
+            if ($(this).val().length == 2)
+            {
+                    $(this).val($(this).val() + "/");
+            }
+            else if ($(this).val().length == 5)
+            {
+                  $(this).val($(this).val() + "/");
+            }
+       });
+</script>
+</html>

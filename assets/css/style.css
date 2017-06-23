@@ -87,25 +87,25 @@ h3  /*foursqare text style*/
 	padding-left: 2px !important;
 
 }
-.glyphicon-ok
+.glyphicon-ok 	/*tick mark style*/
 {
 	color: #5a8dbd;
 	padding: 15px 40px;
 }
-.glyphicon-remove
+.glyphicon-remove	/*wrong tick mark style*/
 {
 	color: red;
 	padding: 15px 40px;
 }
-.pad
+.padding	/*add style padding after popover*/
 {
-	padding-bottom: 8px;
+	padding-bottom: 18px;
 }
-.size
+.size 	/*popover text size*/
 {
 	font-size: 12px;
 }
 .row
 {
-	padding: 20px;
+	padding: 10px;
 }

@@ -14,6 +14,7 @@
 	<script src="./assets/js/script.js"></script>
 </head>
 <body style="background:url('./assets/images/background.png');">   <!-- body background image --> 
+<input type="reset" class="signup btn-sm" value="Sign Up">
 <form name="myform" class="text-center" method="post" id="myform">	<!-- form starting -->
 	<div class="well">												<!-- well starting -->
 	<i class="glyphicon glyphicon-remove-circle" id="closeicon"></i>
@@ -115,5 +116,15 @@
                   $(this).val($(this).val() + "/");
             }
        });
+	$('.signup').click(function()
+	{
+		$('#myform').fadeIn("slow");
+		$('.signup').hide();
+	});
+	$('#closeicon').click(function()
+	{
+		$('.signup').show();
+		$('#myform').hide();
+	})
 </script>
 </html>

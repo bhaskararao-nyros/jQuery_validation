@@ -37,6 +37,7 @@ img
 	float: right;
 	color:  #b4acaf;
 	padding: 0px;
+	margin: -16px -15px;
 }
 #closeicon:hover
 {
@@ -108,4 +109,21 @@ h3  /*foursqare text style*/
 .row
 {
 	padding: 10px;
+}
+.signup
+{
+	float: right;
+	background: #ffc800;
+	border: 2px solid #ffc800;
+	font-size: 17px !important;
+	color: white;
+	font-weight: bold;
+	font-size: 13px !important;
+	margin: 50px 1129px;
+	position: absolute;
+	padding: 7px 14px 8px 16px !important;
+}
+#myform
+{
+	display: none;
 }

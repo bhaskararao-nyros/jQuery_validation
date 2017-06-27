@@ -11,7 +11,7 @@ $('.btn').click(function()
 		var birthday = $('.bday').val();
 		var emailreg = new RegExp(/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/);
 
-if(count > 1)
+if(count >= 1)
 		{
 			if(email =="")
 			{
@@ -20,6 +20,7 @@ if(count > 1)
 			else
 			{
 				$('.emailremove').hide();
+				$('.email').popover('hide');
 			}
 			if(password =="")
 			{
@@ -28,25 +29,29 @@ if(count > 1)
 			else
 			{
 				$('.pwdremove').hide();
-			}if(firstname =="")
+				$('.password').popover('hide');
+			}
+			if(firstname =="")
 			{
 				$('.fnameremove').show();
 			}
 			else
 			{
 				$('.fnameremove').hide();
-			}if(birthday =="")
+				$('.fname').popover('hide');
+			}
+			if(birthday =="")
 			{
 				$('.bdayremove').show();
 			}
 			else
 			{
 				$('.bdayremove').hide();
+				$('.bday').popover('hide');
 			}
 		}
 	if(email =="" || password =="" || firstname =="" || birthday =="")
 	{
-			$('.alert').show();
 			$('.email').popover({
 				html:true,
 				placement:"bottom",
@@ -55,10 +60,6 @@ if(count > 1)
 					return $('#emailerror').html()
 				}
 			});
-			$('.email').popover('show');
-			$('.glyphicon-remove').removeClass('hide');
-			$('p').addClass('padding');
-			$('h1').addClass('padding');
 			$('.password').popover({
 				html:true,
 				placement:"bottom",
@@ -67,7 +68,6 @@ if(count > 1)
 					return $('#pwderror').html()
 				}
 			});
-			$('.password').popover('show');
 			$('.fname').popover({
 				html:true,
 				placement:"bottom",
@@ -76,7 +76,6 @@ if(count > 1)
 					return $('#fnameerror').html()
 				}
 			});
-			$('.fname').popover('show');
 			$('.bday').popover({
 				html:true,
 				placement:"bottom",
@@ -85,12 +84,22 @@ if(count > 1)
 					return $('#bdayerror').html()
 				}
 			});
+			$('.alert').show();
+			$('.glyphicon-remove').removeClass('hide');
+			$('.email').popover('show');
+			$('.password').popover('show');
+			$('.fname').popover('show');
 			$('.bday').popover('show');
+			$('p').addClass('padding');
+			$('h1').addClass('padding');
 			return false;
 		}
 		else
 		{
-			$('p').removeClass('padding');
+			$('.email').popover('hide');
+			$('.password').popover('hide');
+			$('.fname').popover('hide');
+			$('.bday').popover('hide');
 			$('.glyphicon-remove').addClass('hide');
 			alert("Welcome\nThank you for choosing foursquare");
 			return true;
@@ -191,7 +200,7 @@ if(count > 1)
 	$(".bday").focusout(function()
 		{
 			var birthday = $('.bday').val();
-			var reg = new RegExp(/^((0?[13578]|10|12)(-|\/)(([1-9])|(0[1-9])|([12])([0-9]?)|(3[01]?))(-|\/)((19)([2-9])(\d{1})|(20)([01])(\d{1})|([8901])(\d{1}))|(0?[2469]|11)(-|\/)(([1-9])|(0[1-9])|([12])([0-9]?)|(3[0]?))(-|\/)((19)([2-9])(\d{1})|(20)([01])(\d{1})|([8901])(\d{1})))$/);
+			var reg = new RegExp(/^(0?[1-9]|[12][0-9]|3[01])[\/\-](0?[1-9]|1[012])[\/\-]\d{4}$/);
 
 		if(!reg.test(birthday))
 			{
